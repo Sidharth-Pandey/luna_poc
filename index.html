@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Multithreaded file uploader</title>
+    <style>
+        section {
+            margin: 10px;
+        }
+    </style>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>  
+</head>
+<body>
+<main>
+    <form id="form">
+        <section>
+            <input type="number" id="threads" size="10" min="1" step="1" value="2"> Threads quantity
+        </section>
+        <section>
+            <input type="number" id="chunkSize" size="10" min="1" step="1" value="1"> Chunk size (MB)
+        </section>
+        <section>
+            <input type="file" name="file" id="file">
+        </section>
+        <section>
+            <button type="reset" id="reset">Clear</button>
+            <button id="upload">Upload</button>
+            <button id="continue" type="button" disabled="disabled">Continue</button>
+            <button id="uploadSingle">Upload Single document</button>
+            <span id="progress"></span>
+            <span id="uploadTime"></span>
+        </section>
+    </form>
+    <button id="download">download</button>
+    <button id="UploadMultipart">UploadMultipart</button>
+    <iframe id="my_iframe_download" style="display:none;"></iframe>
+
+</main>
+<script src="uploader.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
